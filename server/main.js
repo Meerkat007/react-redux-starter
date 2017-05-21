@@ -62,6 +62,10 @@ if (project.env === 'development') {
   // the web server and not the app server, but this helps to demo the
   // server in production.
   app.use(express.static(path.resolve(project.basePath, project.outDir)))
+
+  app.use('*', function (req, res, next) {
+    res.sendfile(path.resolve(project.basePath, project.outDir) + '/index.html')
+  })
 }
 
 module.exports = app
