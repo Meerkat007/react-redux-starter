@@ -64,7 +64,7 @@ if (project.env === 'development') {
   app.use(express.static(path.resolve(project.basePath, project.outDir)))
 
   app.use('*', function (req, res, next) {
-    res.sendfile(path.resolve(project.basePath, project.outDir) + '/index.html')
+    res.sendFile(path.resolve(project.basePath, project.outDir) + '/index.html')
   })
 }
 
